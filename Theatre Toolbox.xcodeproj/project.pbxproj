@@ -1,0 +1,380 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D817737A23D25EAC00EF5A8E /* SPLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D817737923D25EAC00EF5A8E /* SPLViewController.swift */; };
+		D878785A23CF1F5C00EBCFC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D878785923CF1F5C00EBCFC0 /* AppDelegate.swift */; };
+		D878785C23CF1F5C00EBCFC0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D878785B23CF1F5C00EBCFC0 /* SceneDelegate.swift */; };
+		D878785E23CF1F5C00EBCFC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D878785D23CF1F5C00EBCFC0 /* ViewController.swift */; };
+		D878786123CF1F5C00EBCFC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D878785F23CF1F5C00EBCFC0 /* Main.storyboard */; };
+		D878786323CF1F6200EBCFC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D878786223CF1F6200EBCFC0 /* Assets.xcassets */; };
+		D878786623CF1F6200EBCFC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D878786423CF1F6200EBCFC0 /* LaunchScreen.storyboard */; };
+		D878786E23CF223600EBCFC0 /* NoiseGeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D878786D23CF223600EBCFC0 /* NoiseGeneratorViewController.swift */; };
+		D878787223CF22F800EBCFC0 /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D878787023CF22F800EBCFC0 /* AudioKitUI.framework */; };
+		D878787323CF22F800EBCFC0 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D878787123CF22F800EBCFC0 /* AudioKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D817737923D25EAC00EF5A8E /* SPLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPLViewController.swift; sourceTree = "<group>"; };
+		D878785623CF1F5C00EBCFC0 /* Theatre Toolbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Theatre Toolbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D878785923CF1F5C00EBCFC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D878785B23CF1F5C00EBCFC0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D878785D23CF1F5C00EBCFC0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D878786023CF1F5C00EBCFC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D878786223CF1F6200EBCFC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D878786523CF1F6200EBCFC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D878786723CF1F6200EBCFC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D878786D23CF223600EBCFC0 /* NoiseGeneratorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseGeneratorViewController.swift; sourceTree = "<group>"; };
+		D878787023CF22F800EBCFC0 /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKitUI.framework; path = "Theatre Toolbox/AudioKitUI.framework"; sourceTree = "<group>"; };
+		D878787123CF22F800EBCFC0 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = "Theatre Toolbox/AudioKit.framework"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D878785323CF1F5C00EBCFC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D878787223CF22F800EBCFC0 /* AudioKitUI.framework in Frameworks */,
+				D878787323CF22F800EBCFC0 /* AudioKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D878784D23CF1F5C00EBCFC0 = {
+			isa = PBXGroup;
+			children = (
+				D878785823CF1F5C00EBCFC0 /* Theatre Toolbox */,
+				D878785723CF1F5C00EBCFC0 /* Products */,
+				D878786F23CF22F800EBCFC0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+			usesTabs = 1;
+		};
+		D878785723CF1F5C00EBCFC0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D878785623CF1F5C00EBCFC0 /* Theatre Toolbox.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D878785823CF1F5C00EBCFC0 /* Theatre Toolbox */ = {
+			isa = PBXGroup;
+			children = (
+				D878785923CF1F5C00EBCFC0 /* AppDelegate.swift */,
+				D878785B23CF1F5C00EBCFC0 /* SceneDelegate.swift */,
+				D878785D23CF1F5C00EBCFC0 /* ViewController.swift */,
+				D878786D23CF223600EBCFC0 /* NoiseGeneratorViewController.swift */,
+				D878785F23CF1F5C00EBCFC0 /* Main.storyboard */,
+				D817737923D25EAC00EF5A8E /* SPLViewController.swift */,
+				D878786223CF1F6200EBCFC0 /* Assets.xcassets */,
+				D878786423CF1F6200EBCFC0 /* LaunchScreen.storyboard */,
+				D878786723CF1F6200EBCFC0 /* Info.plist */,
+			);
+			path = "Theatre Toolbox";
+			sourceTree = "<group>";
+		};
+		D878786F23CF22F800EBCFC0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D878787123CF22F800EBCFC0 /* AudioKit.framework */,
+				D878787023CF22F800EBCFC0 /* AudioKitUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D878785523CF1F5C00EBCFC0 /* Theatre Toolbox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D878786A23CF1F6200EBCFC0 /* Build configuration list for PBXNativeTarget "Theatre Toolbox" */;
+			buildPhases = (
+				D878785223CF1F5C00EBCFC0 /* Sources */,
+				D878785323CF1F5C00EBCFC0 /* Frameworks */,
+				D878785423CF1F5C00EBCFC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Theatre Toolbox";
+			productName = "Theatre Toolbox";
+			productReference = D878785623CF1F5C00EBCFC0 /* Theatre Toolbox.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D878784E23CF1F5C00EBCFC0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Nathan Billis";
+				TargetAttributes = {
+					D878785523CF1F5C00EBCFC0 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = D878785123CF1F5C00EBCFC0 /* Build configuration list for PBXProject "Theatre Toolbox" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D878784D23CF1F5C00EBCFC0;
+			productRefGroup = D878785723CF1F5C00EBCFC0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D878785523CF1F5C00EBCFC0 /* Theatre Toolbox */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D878785423CF1F5C00EBCFC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D878786623CF1F6200EBCFC0 /* LaunchScreen.storyboard in Resources */,
+				D878786323CF1F6200EBCFC0 /* Assets.xcassets in Resources */,
+				D878786123CF1F5C00EBCFC0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D878785223CF1F5C00EBCFC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D878786E23CF223600EBCFC0 /* NoiseGeneratorViewController.swift in Sources */,
+				D878785E23CF1F5C00EBCFC0 /* ViewController.swift in Sources */,
+				D878785A23CF1F5C00EBCFC0 /* AppDelegate.swift in Sources */,
+				D878785C23CF1F5C00EBCFC0 /* SceneDelegate.swift in Sources */,
+				D817737A23D25EAC00EF5A8E /* SPLViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D878785F23CF1F5C00EBCFC0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D878786023CF1F5C00EBCFC0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D878786423CF1F6200EBCFC0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D878786523CF1F6200EBCFC0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D878786823CF1F6200EBCFC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D878786923CF1F6200EBCFC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D878786B23CF1F6200EBCFC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UH78F4P62F;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Theatre\\ Toolbox",
+					"$(PROJECT_DIR)/Theatre\\ Toolbox",
+				);
+				INFOPLIST_FILE = "Theatre Toolbox/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = "-lstdc++";
+				PRODUCT_BUNDLE_IDENTIFIER = "nbillis.Theatre-Toolbox";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D878786C23CF1F6200EBCFC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UH78F4P62F;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Theatre\\ Toolbox",
+					"$(PROJECT_DIR)/Theatre\\ Toolbox",
+				);
+				INFOPLIST_FILE = "Theatre Toolbox/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = "-lstdc++";
+				PRODUCT_BUNDLE_IDENTIFIER = "nbillis.Theatre-Toolbox";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D878785123CF1F5C00EBCFC0 /* Build configuration list for PBXProject "Theatre Toolbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D878786823CF1F6200EBCFC0 /* Debug */,
+				D878786923CF1F6200EBCFC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D878786A23CF1F6200EBCFC0 /* Build configuration list for PBXNativeTarget "Theatre Toolbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D878786B23CF1F6200EBCFC0 /* Debug */,
+				D878786C23CF1F6200EBCFC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D878784E23CF1F5C00EBCFC0 /* Project object */;
+}
