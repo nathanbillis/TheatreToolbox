@@ -4,4 +4,3 @@ Theatre Toolbox
 - SPL Metering
 - Band passed noise
 - Recording of microphones
-- 

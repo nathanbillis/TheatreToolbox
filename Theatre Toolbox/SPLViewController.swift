@@ -24,23 +24,47 @@ class SPLViewController: UIViewController {
     
 
 	@objc func trackVolume() {
-        let mic = AKMicrophone()
-        let tracker = AKAmplitudeTracker(mic)
-		let silence = AKBooster(tracker, gain: 0)
-		AudioKit.output = silence
-        
-        tracker.start()
-        
-		AKPlaygroundLoop(every: 1){
-			print(tracker.leftAmplitude)
-//            volumeLevel.text = String(tracker.leftAmplitude * 100)
-		}
+		 AKSettings.audioInputEnabled = true
+		 
+		 // Shared by SPL + RTA
+		 let mic = AKMicrophone()
+		 let booster = AKBooster(mic)
+		 let tracker = AKFrequencyTracker(booster)
+		 let silence = AKBooster(tracker, gain: 0)
+		
+		 // Tap for RTA
+//		 let tap = AKFFTTap(booster)
+		 let mixer = AKMixer(silence)
+		let amplitudeTap = AKMicrophoneTracker()
+//		 var timer: Timer!
+//		 let FFTSize = 512
+//		 var sampleRate:double_t = 44100
+//		 var fttdata = 0.0
+
+		 
+		 AudioKit.output = mixer
+		 amplitudeTap.start()
+		 try!AudioKit.start()
+
+
+		Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (timer) in
+
+				
+				let amplitude = 20*log10(amplitudeTap.amplitude) + 70
+				
+
+			self.volumeLevel.text = String(amplitude)
+			
+			print(average)
+
+
+		})
+	
+		
 		
 
-        volumeLevel.text = String(tracker.leftAmplitude * 100)
-    }
-	
 
     
 
+}
 }
