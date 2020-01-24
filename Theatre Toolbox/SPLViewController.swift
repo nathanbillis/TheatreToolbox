@@ -55,7 +55,6 @@ class SPLViewController: UIViewController {
 
 			self.volumeLevel.text = String(amplitude)
 			
-			print(average)
 
 
 		})
