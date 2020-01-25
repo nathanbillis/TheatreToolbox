@@ -27,35 +27,41 @@ class NoiseGeneratorViewController: UIViewController {
 	
 	// BandPass settings
     let bandPassNoise = AKWhiteNoise()
-	// let filteredBPNoise = AKCombFilterReverb(bandPassNoise, reverbDuration: 1, loopDuration: 1)
-	
+    lazy var filteredBPNoise = AKResonantFilter(bandPassNoise)
 	
 
 	@IBOutlet var amplitudeSlider: UISlider!
 	@IBOutlet var frequencySlider: UISlider!
-	
+    @IBOutlet weak var frequencyLabel: UILabel!
+    
     
     //MARK: Functions
     
     func initalise(){
-        AudioKit.output = AKMixer(pinkNoise, sineWave, whiteNoise)
+        AudioKit.output = AKMixer(pinkNoise, sineWave, whiteNoise, filteredBPNoise)
         
         pinkNoise.stop()
         whiteNoise.stop()
-		bandPassNoise.stop()
+		filteredBPNoise.stop()
+        bandPassNoise.stop()
         
         sineWave.amplitude = Double(amplitudeSlider.value)
         pinkNoise.amplitude = Double(amplitudeSlider.value)
         whiteNoise.amplitude = Double(amplitudeSlider.value)
-
-        try!AudioKit.start()
+        bandPassNoise.amplitude = Double(amplitudeSlider.value)
         
+        
+        frequencyLabel.text = String(Int(frequencySlider.value))
+
+		try!AudioKit.start()
+		
     }
     
     @IBAction func amplitudeSliderMoved(_ sender: UISlider) {
         sineWave.amplitude = Double(amplitudeSlider.value)
         pinkNoise.amplitude = Double(amplitudeSlider.value)
         whiteNoise.amplitude = Double(amplitudeSlider.value)
+        bandPassNoise.amplitude = Double(amplitudeSlider.value)
     }
     
     @IBAction func pinkNoiseButtonPressed(_ sender: UIButton) {
@@ -63,17 +69,24 @@ class NoiseGeneratorViewController: UIViewController {
             pinkNoise.stop()
         }
         else{
-			if(whiteNoise.isPlaying || sineWave.isPlaying || bandPassNoise.isPlaying){
+			if(whiteNoise.isPlaying || sineWave.isPlaying || filteredBPNoise.isPlaying){
                 whiteNoise.stop()
                 sineWave.stop()
-				bandPassNoise.stop()
+                bandPassNoise.stop()
+				filteredBPNoise.stop()
             }
             pinkNoise.start()}
             }
     
+    
 	@IBAction func bandPassButtonPressed(_ sender: UIButton) {
-		if (bandPassNoise.isPlaying){
-			bandPassNoise.stop()
+        // Not really bandPass Noise but is working for now.
+        
+
+		if (filteredBPNoise.isPlaying){
+            bandPassNoise.stop()
+
+			filteredBPNoise.stop()
 		}
 			else{
 				if(whiteNoise.isPlaying || sineWave.isPlaying || pinkNoise.isPlaying){
@@ -81,8 +94,10 @@ class NoiseGeneratorViewController: UIViewController {
 					sineWave.stop()
 					pinkNoise.stop()
 				}
-			
-			bandPassNoise.start()
+            
+            filteredBPNoise.frequency = Double(frequencySlider.value)
+            bandPassNoise.start()
+			filteredBPNoise.start()
 		}
 		
 	}
@@ -93,12 +108,13 @@ class NoiseGeneratorViewController: UIViewController {
             sineWave.stop()
         }
         else {
-			if(whiteNoise.isPlaying || pinkNoise.isPlaying || bandPassNoise.isPlaying){
+			if(whiteNoise.isPlaying || pinkNoise.isPlaying || filteredBPNoise.isPlaying){
                 whiteNoise.stop()
                 pinkNoise.stop()
-				bandPassNoise.stop()
+                bandPassNoise.stop()
+				filteredBPNoise.stop()
             }
-        sineWave.frequency = 440
+            sineWave.frequency = Double(frequencySlider.value)
         sineWave.start()
         }
         
@@ -110,17 +126,31 @@ class NoiseGeneratorViewController: UIViewController {
             whiteNoise.stop()
         }
         else{
-			if(pinkNoise.isPlaying || sineWave.isPlaying || bandPassNoise.isPlaying){
+			if(pinkNoise.isPlaying || sineWave.isPlaying || filteredBPNoise.isPlaying){
                 pinkNoise.stop()
                 sineWave.stop()
-				bandPassNoise.stop()
+                bandPassNoise.stop()
+				filteredBPNoise.stop()
             }
             whiteNoise.start()
         }
     }
     
+    @IBAction func frequencyChanged(_ sender: UISlider) {
+        sineWave.frequency = Double(frequencySlider.value)
+        filteredBPNoise.frequency = Double(frequencySlider.value)
+        frequencyLabel.text = String(Int(frequencySlider.value))
+        
+    }
     @IBAction func backButtonPressed(_ sender: UIButton) {
-        try!AudioKit.stop()
+		do {
+			AudioKit.disconnectAllInputs()
+			try AudioKit.stop()
+			try AudioKit.shutdown()
+		} catch {
+			print("AudioKit did not stop")
+		}
+		AudioKit.output = nil
     }
     
     
