@@ -143,8 +143,16 @@ class NoiseGeneratorViewController: UIViewController {
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
+		
+		pinkNoise.stop()
+		sineWave.stop()
+		bandPassNoise.stop()
+		filteredBPNoise.stop()
+		whiteNoise.stop()
+		
 		do {
 			AudioKit.disconnectAllInputs()
+			AudioKit.output = nil
 			try AudioKit.stop()
 			try AudioKit.shutdown()
 		} catch {

@@ -427,10 +427,10 @@
             </objects>
             <point key="canvasLocation" x="895" y="118.5185185185185"/>
         </scene>
-        <!--View Controller-->
+        <!--RTA View Controller-->
         <scene sceneID="wNJ-pc-UVr">
             <objects>
-                <viewController id="z9c-Oo-wll" customClass="RTAViewController" customModule="Theatre_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="RTA View Controller" id="z9c-Oo-wll" customClass="RTAViewController" customModule="Theatre_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jye-h2-Otc">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -454,7 +454,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KHv-gZ-621" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1695" y="81"/>
+            <point key="canvasLocation" x="1694.7841726618706" y="80.575539568345334"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Yfh-h3-xWL">
