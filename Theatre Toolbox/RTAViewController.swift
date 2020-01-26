@@ -13,9 +13,22 @@ import AudioKit
 
 
 
-typealias BSChartList = [BSChartObject]
-
 class RTAViewController: UIViewController {
-	@IBOutlet weak var tableView: BSChartTableView!
+    
+    
 	
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        do {
+            // Stop all I/O and disconnect and shutdown AudioKit
+            AudioKit.disconnectAllInputs()
+            AudioKit.output = nil
+//            self.amplitudeTap.stop()
+            try AudioKit.stop()
+            try AudioKit.shutdown()
+        } catch {
+            print("AudioKit did not stop")
+        }
+        AudioKit.output = nil
+    }
+    }
 }

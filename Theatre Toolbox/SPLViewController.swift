@@ -11,43 +11,47 @@ import AudioKitUI
 import AudioKit
 
 class SPLViewController: UIViewController {
-
+    
+    //MARK: Variables
     override func viewDidLoad() {
         super.viewDidLoad()
 		AKMicrophone()
-		trackVolume()
+        trackVolume(updateRate: 0.25)
 		try!AudioKit.start()
 
         // Do any additional setup after loading the view.
     }
     
+    
     @IBOutlet var volumeLevel: UILabel!
     @IBOutlet weak var maxDbLabel: UILabel!
-    
+    @IBOutlet weak var dBGraphAmount: UIProgressView!
+    let amplitudeTap = AKMicrophoneTracker()
+    let mixer = AKMixer()
     var maxDb = 0
     
     
-	func trackVolume() {
+    //MARK: Functions
+    func trackVolume(updateRate: Double) {
+        // Track the amplitude of the microphone and output
 
-		 let mixer = AKMixer()
-		 let amplitudeTap = AKMicrophoneTracker()
-        
-        maxDbLabel.text = String(maxDb)
-        
-
-		 
+         self.maxDbLabel.text = String(self.maxDb)
 		 AudioKit.output = mixer
-		 amplitudeTap.start()
+		 self.amplitudeTap.start()
 		 try!AudioKit.start()
 
 
-		Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true, block: { (timer) in
+		Timer.scheduledTimer(withTimeInterval: updateRate, repeats: true, block: { (timer) in
 
 			// Estimated dB
-            let amplitude = 20*log10(amplitudeTap.amplitude) + 80
+            let amplitude = 20*log10(self.amplitudeTap.amplitude) + 80
             
 
 			self.volumeLevel.text = String(Int(amplitude))
+            
+            let dbProgress = amplitude/180
+            
+			self.dbGraphRenderer(progress: Float(dbProgress))
             
             if(Int(amplitude) > self.maxDb)
             {
@@ -59,9 +63,29 @@ class SPLViewController: UIViewController {
 	
 }
     
+    
+    func dbGraphRenderer(progress: Float){
+		// Render the Graph different colours depending on the progress
+        self.dBGraphAmount.progress = Float(progress)
+        
+        if(progress > 0.5){
+            self.dBGraphAmount.progressTintColor = .red
+        }else if (progress > 0.35){
+            self.dBGraphAmount.progressTintColor = .yellow
+        }
+        else{
+            self.dBGraphAmount.progressTintColor = .green
+        }
+        
+    }
+	
+	
     @IBAction func backButtonPressed(_ sender: UIButton) {
 		do {
+            // Stop all I/O and disconnect and shutdown AudioKit
 			AudioKit.disconnectAllInputs()
+            AudioKit.output = nil
+            self.amplitudeTap.stop()
 			try AudioKit.stop()
 			try AudioKit.shutdown()
 		} catch {

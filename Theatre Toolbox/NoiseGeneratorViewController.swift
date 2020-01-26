@@ -20,7 +20,6 @@ class NoiseGeneratorViewController: UIViewController {
     }
 
 
-	@IBOutlet var frequencyPicker: UIPickerView!
 	let whiteNoise = AKWhiteNoise()
     let pinkNoise = AKPinkNoise()
     let sineWave = AKOscillator()
@@ -142,6 +141,7 @@ class NoiseGeneratorViewController: UIViewController {
         frequencyLabel.text = String(Int(frequencySlider.value))
         
     }
+    
     @IBAction func backButtonPressed(_ sender: UIButton) {
 		do {
 			AudioKit.disconnectAllInputs()
