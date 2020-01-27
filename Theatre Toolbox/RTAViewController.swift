@@ -9,43 +9,47 @@
 import Foundation
 import UIKit
 import AudioKitUI
-import AudioKit
-import SwiftCharts
+import AudioKit 
 
 
-
+/// View Controller for RTA
 class RTAViewController: UIViewController {
-    
+	
+	
+	//MARK: Variables
 	var mic: AKMicrophone!
-    
-    var screenWidth = UIScreen.main.bounds.width
-    var screenHeight = UIScreen.main.bounds.height
-
-
-    
+	var plot: AKNodeFFTPlot!
+	@IBOutlet weak var frequencyValue: UILabel!
+	@IBOutlet weak var musicNoteValue: UILabel!
+	@IBOutlet weak var amplitudeValue: UILabel!
+	
+	
+	var screenWidth = UIScreen.main.bounds.width
+	var screenHeight = UIScreen.main.bounds.height
+	
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		mic = AKMicrophone()
 		createRTA()
+		AudioKit.output = AKMixer()
 		try!AudioKit.start()
-		
-		// Do any additional setup after loading the view.
+		updateValues()
 	}
 	
+	
+	//MARK: Functions
 	func createRTA(){
+		/*
+		Creates Fake RTA
+		FEATURE add with proper values and logarithmic display
+		*/
 		mic.start()
 		
 		AKSettings.audioInputEnabled = true
-
+		
 		let frame = CGRect(x: 0, y: 200, width: screenWidth, height: screenHeight - 200)
-		
-		let plot = AKNodeFFTPlot(mic, frame: frame)
-		let tracker = AKFrequencyTracker.init(mic)
-		let silence = AKBooster(tracker,gain:0)
-		let mixer = AKMixer(silence)
-		AudioKit.output = mixer
-		try!AudioKit.start()
-		
+		plot = AKNodeFFTPlot(mic, frame: frame)
 		
 		plot.shouldMirror = false
 		plot.color = .white
@@ -61,20 +65,33 @@ class RTAViewController: UIViewController {
 		self.view.addSubview(plot)
 	}
 	
+	func updateValues(){
+		// Updates the values of the trackers on screen
+		let tracker = AKMicrophoneTracker()
+		tracker.start()
+		
+		Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: { (timer) in
+			
+			self.frequencyValue.text = String(Int(tracker.frequency))
+			let amplitude = 20*log10(tracker.amplitude) + 80
+			
+			self.amplitudeValue.text = String(Int(amplitude))
+		})
+	}
 	
 	
-    @IBAction func backButtonPressed(_ sender: UIButton) {
-        do {
-            // Stop all I/O and disconnect and shutdown AudioKit
-            AudioKit.disconnectAllInputs()
-            AudioKit.output = nil
-//            self.frequencyTap.stop()
-            try AudioKit.stop()
-            try AudioKit.shutdown()
-        } catch {
-            print("AudioKit did not stop")
-        }
-        AudioKit.output = nil
-    }
-    
+	
+	@IBAction func backButtonPressed(_ sender: UIButton) {
+		do {
+			// Stop all I/O and disconnect and shutdown AudioKit
+			AudioKit.disconnectAllInputs()
+			self.mic.stop()
+			try AudioKit.stop()
+			try AudioKit.shutdown()
+		} catch {
+			print("AudioKit did not stop")
+		}
+		AudioKit.output = nil
+	}
+	
 }

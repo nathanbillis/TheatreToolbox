@@ -11,11 +11,11 @@ import AudioKit
 import AudioKitUI
 
 class NoiseGeneratorViewController: UIViewController {
+	// View Controller for the Noise Generator screen
 
     override func viewDidLoad() {
         super.viewDidLoad()
         initalise()
-				
         // Do any additional setup after loading the view.
     }
 
@@ -37,26 +37,32 @@ class NoiseGeneratorViewController: UIViewController {
     //MARK: Functions
     
     func initalise(){
+		// Initalise the view and stops the noise
         AudioKit.output = AKMixer(pinkNoise, sineWave, whiteNoise, filteredBPNoise)
-        
+		
+		// stop all output noise
         pinkNoise.stop()
         whiteNoise.stop()
 		filteredBPNoise.stop()
         bandPassNoise.stop()
-        
+		
+		
+		// setup the amplitudes
         sineWave.amplitude = Double(amplitudeSlider.value)
         pinkNoise.amplitude = Double(amplitudeSlider.value)
         whiteNoise.amplitude = Double(amplitudeSlider.value)
         bandPassNoise.amplitude = Double(amplitudeSlider.value)
-        
-        
+		
+		// setup frequency label
         frequencyLabel.text = String(Int(frequencySlider.value))
 
+		// start AudioKit!
 		try!AudioKit.start()
 		
     }
     
     @IBAction func amplitudeSliderMoved(_ sender: UISlider) {
+		// Updates amplitude when slider is moved
         sineWave.amplitude = Double(amplitudeSlider.value)
         pinkNoise.amplitude = Double(amplitudeSlider.value)
         whiteNoise.amplitude = Double(amplitudeSlider.value)
@@ -64,6 +70,7 @@ class NoiseGeneratorViewController: UIViewController {
     }
     
     @IBAction func pinkNoiseButtonPressed(_ sender: UIButton) {
+		// Toggles Pink Noise
         if(pinkNoise.isPlaying){
             pinkNoise.stop()
         }
@@ -80,8 +87,7 @@ class NoiseGeneratorViewController: UIViewController {
     
 	@IBAction func bandPassButtonPressed(_ sender: UIButton) {
         // Not really bandPass Noise but is working for now.
-        
-
+		
 		if (filteredBPNoise.isPlaying){
             bandPassNoise.stop()
 
@@ -103,6 +109,7 @@ class NoiseGeneratorViewController: UIViewController {
 	
 	
 	@IBAction func sineWavePressed(_ sender: UIButton) {
+		// Toggles Sine Wave
         if(sineWave.isPlaying){
             sineWave.stop()
         }
@@ -120,12 +127,14 @@ class NoiseGeneratorViewController: UIViewController {
     }
     
     @IBAction func whiteNoiseButtonPressed(_ sender: UIButton) {
+		// Toggles White Noise
         
         if(whiteNoise.isPlaying){
             whiteNoise.stop()
         }
         else{
 			if(pinkNoise.isPlaying || sineWave.isPlaying || filteredBPNoise.isPlaying){
+				// Stops all other Noise
                 pinkNoise.stop()
                 sineWave.stop()
                 bandPassNoise.stop()
@@ -136,6 +145,7 @@ class NoiseGeneratorViewController: UIViewController {
     }
     
     @IBAction func frequencyChanged(_ sender: UISlider) {
+		// Update the labels and frequencies when frequencies change
         sineWave.frequency = Double(frequencySlider.value)
         filteredBPNoise.frequency = Double(frequencySlider.value)
         frequencyLabel.text = String(Int(frequencySlider.value))
@@ -143,16 +153,10 @@ class NoiseGeneratorViewController: UIViewController {
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
-		
-		pinkNoise.stop()
-		sineWave.stop()
-		bandPassNoise.stop()
-		filteredBPNoise.stop()
-		whiteNoise.stop()
+		// Turns off output and returns to menu scrteen
 		
 		do {
-			AudioKit.disconnectAllInputs()
-			AudioKit.output = nil
+            AudioKit.disconnectAllInputs()
 			try AudioKit.stop()
 			try AudioKit.shutdown()
 		} catch {

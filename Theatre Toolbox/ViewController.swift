@@ -10,6 +10,8 @@ import UIKit
 import AudioKit
 
 class ViewController: UIViewController {
+	
+	// Intial View Controller 
 
     override func viewDidLoad() {
         super.viewDidLoad()
