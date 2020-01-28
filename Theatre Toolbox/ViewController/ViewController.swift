@@ -15,6 +15,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		try!AudioKit.stop()
         // Do any additional setup after loading the view.
     }
 

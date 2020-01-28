@@ -14,7 +14,7 @@ class RTAControl {
 	
 	// Future Feature add RTA Graphs
 	
-	let frequencies = [50 , 100, 200 , 500, 1000, 2000, 4000,8000, 12000]
+	let frequencies = [50 , 100, 200 , 500, 1000, 2000, 4000, 8000, 12000]
 	
 	
 	func plotGraph(){

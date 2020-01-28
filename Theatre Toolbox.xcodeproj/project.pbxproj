@@ -19,7 +19,7 @@
 		DE54347223DCD04E007AB288 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D878787123CF22F800EBCFC0 /* AudioKit.framework */; };
 		DE54347323DCD04E007AB288 /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D878787023CF22F800EBCFC0 /* AudioKitUI.framework */; };
 		DE54347523DCD216007AB288 /* icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE54347423DCD216007AB288 /* icons.xcassets */; };
-		DE8F4EA823DF3CBE0047D244 /* appInfo.txt in Resources */ = {isa = PBXBuildFile; fileRef = DE8F4EA723DF3CBE0047D244 /* appInfo.txt */; };
+		DED431BA23E0A55400E16308 /* recordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED431B923E0A55400E16308 /* recordingViewController.swift */; };
 		DED91A0223DCEFC6000B3FB1 /* RTAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED91A0123DCEFC6000B3FB1 /* RTAViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,8 +51,8 @@
 		D8C742B623DA6BD70054ED3E /* NoiseGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseGenerator.swift; sourceTree = "<group>"; };
 		DE2C7B7A23DE1F5D00152299 /* RTAControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTAControl.swift; sourceTree = "<group>"; };
 		DE54347423DCD216007AB288 /* icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = icons.xcassets; sourceTree = "<group>"; };
-		DE8F4EA723DF3CBE0047D244 /* appInfo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = appInfo.txt; sourceTree = "<group>"; };
-		DED919FE23DCE4B9000B3FB1 /* Theatre Toolbox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Theatre Toolbox.entitlements"; sourceTree = "<group>"; };
+		DED431B923E0A55400E16308 /* recordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recordingViewController.swift; sourceTree = "<group>"; };
+		DED431BD23E0ACAF00E16308 /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.txt; path = "/Volumes/iOS/ncab500/TheatreToolbox/Theatre Toolbox/README.txt"; sourceTree = "<absolute>"; };
 		DED91A0123DCEFC6000B3FB1 /* RTAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTAViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,20 +90,15 @@
 		D878785823CF1F5C00EBCFC0 /* Theatre Toolbox */ = {
 			isa = PBXGroup;
 			children = (
-				DED919FE23DCE4B9000B3FB1 /* Theatre Toolbox.entitlements */,
+				DED431BC23E0AC5800E16308 /* Assets */,
 				D878785923CF1F5C00EBCFC0 /* AppDelegate.swift */,
-				D878785D23CF1F5C00EBCFC0 /* ViewController.swift */,
-				D878786D23CF223600EBCFC0 /* NoiseGeneratorViewController.swift */,
+				DED431BB23E0AC1C00E16308 /* ViewController */,
 				D878785F23CF1F5C00EBCFC0 /* Main.storyboard */,
-				DE54347423DCD216007AB288 /* icons.xcassets */,
-				D817737923D25EAC00EF5A8E /* SPLViewController.swift */,
-				D878786223CF1F6200EBCFC0 /* Assets.xcassets */,
 				D878786423CF1F6200EBCFC0 /* LaunchScreen.storyboard */,
 				D878786723CF1F6200EBCFC0 /* Info.plist */,
 				D8C742B623DA6BD70054ED3E /* NoiseGenerator.swift */,
-				DED91A0123DCEFC6000B3FB1 /* RTAViewController.swift */,
 				DE2C7B7A23DE1F5D00152299 /* RTAControl.swift */,
-				DE8F4EA723DF3CBE0047D244 /* appInfo.txt */,
+				DED431BD23E0ACAF00E16308 /* README.txt */,
 			);
 			path = "Theatre Toolbox";
 			sourceTree = "<group>";
@@ -115,6 +110,27 @@
 				D878787023CF22F800EBCFC0 /* AudioKitUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DED431BB23E0AC1C00E16308 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DED431B923E0A55400E16308 /* recordingViewController.swift */,
+				D878785D23CF1F5C00EBCFC0 /* ViewController.swift */,
+				D878786D23CF223600EBCFC0 /* NoiseGeneratorViewController.swift */,
+				D817737923D25EAC00EF5A8E /* SPLViewController.swift */,
+				DED91A0123DCEFC6000B3FB1 /* RTAViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DED431BC23E0AC5800E16308 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				DE54347423DCD216007AB288 /* icons.xcassets */,
+				D878786223CF1F6200EBCFC0 /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +209,6 @@
 				D878786623CF1F6200EBCFC0 /* LaunchScreen.storyboard in Resources */,
 				D878786323CF1F6200EBCFC0 /* Assets.xcassets in Resources */,
 				DE54347523DCD216007AB288 /* icons.xcassets in Resources */,
-				DE8F4EA823DF3CBE0047D244 /* appInfo.txt in Resources */,
 				D878786123CF1F5C00EBCFC0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +224,7 @@
 				D878786E23CF223600EBCFC0 /* NoiseGeneratorViewController.swift in Sources */,
 				D8C742B723DA6BD70054ED3E /* NoiseGenerator.swift in Sources */,
 				DED91A0223DCEFC6000B3FB1 /* RTAViewController.swift in Sources */,
+				DED431BA23E0A55400E16308 /* recordingViewController.swift in Sources */,
 				D878785E23CF1F5C00EBCFC0 /* ViewController.swift in Sources */,
 				D878785A23CF1F5C00EBCFC0 /* AppDelegate.swift in Sources */,
 				D817737A23D25EAC00EF5A8E /* SPLViewController.swift in Sources */,
@@ -384,7 +400,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -421,7 +437,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

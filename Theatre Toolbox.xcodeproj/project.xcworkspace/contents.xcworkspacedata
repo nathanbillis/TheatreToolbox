@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Theatre Toolbox.xcodeproj">
+      location = "group:/Volumes/iOS/ncab500/TheatreToolbox/Theatre Toolbox/README.txt">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

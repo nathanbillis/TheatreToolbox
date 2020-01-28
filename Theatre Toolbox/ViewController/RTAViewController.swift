@@ -41,7 +41,7 @@ class RTAViewController: UIViewController {
 	//MARK: Functions
 	func createRTA(){
 		/*
-		Creates Fake RTA
+		Creates Linear RTA
 		FEATURE add with proper values and logarithmic display
 		*/
 		mic.start()
